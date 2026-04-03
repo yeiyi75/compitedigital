@@ -1,0 +1,16 @@
+# Compite Digital
+
+> Consultoría de estrategia digital especializada en diseño web, SEO y GEO (Generative Engine Optimization) para empresas.
+
+## Servicios
+
+- [Diseño Web Moderno](https://www.competedigital.es/#diseno-web): Sitios web rápidos, accesibles y optimizados para conversión con IA generativa para desarrollo de contenido.
+- [SEO — Posicionamiento en Buscadores](https://www.competedigital.es/#seo): Auditoría técnica, palabras clave, optimización on-page, contenido de autoridad y link building.
+- [GEO — Generative Engine Optimization](https://www.competedigital.es/#geo): Optimización para ser citado por ChatGPT, Perplexity, Google AI Overviews y Claude.
+- [Estrategia de Presencia Digital](https://www.competedigital.es/#estrategia): Plan integral de visibilidad online alineado con objetivos de negocio.
+- [Diagnóstico y Hoja de Ruta Digital](https://www.competedigital.es/#diagnostico): Auditoría completa con plan de acción priorizado.
+
+## Contacto
+
+- Email: hola@competedigital.es
+- Web: https://www.competedigital.es
