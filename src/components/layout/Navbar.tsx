@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const navLinks = [
-  { href: "#servicios", label: "Servicios" },
-  { href: "#geo", label: "GEO" },
-  { href: "#proceso", label: "Proceso" },
+  { href: "/#servicios", label: "Servicios" },
+  { href: "/#geo", label: "GEO" },
+  { href: "/#proceso", label: "Proceso" },
   { href: "/blog", label: "Blog" },
 ];
 
@@ -56,7 +56,7 @@ export function Navbar() {
           ))}
           <li>
             <a
-              href="#contacto"
+              href="/#contacto"
               className="bg-primary text-on-primary px-6 py-2.5 rounded-[0.5rem] text-[0.72rem] font-bold tracking-[0.14em] uppercase no-underline transition-colors duration-300 hover:bg-primary-container"
             >
               Diagnóstico Gratuito
@@ -103,7 +103,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contacto"
+            href="/#contacto"
             onClick={handleLinkClick}
             className="bg-primary text-on-primary px-8 py-3 rounded-[0.5rem] text-[0.82rem] font-bold tracking-[0.14em] uppercase no-underline"
           >

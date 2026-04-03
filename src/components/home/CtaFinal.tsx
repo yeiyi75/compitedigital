@@ -1,7 +1,7 @@
 export function CtaFinal() {
   return (
     <section className="py-32 px-6 bg-surface-low" id="contacto">
-      <div className="max-w-[960px] mx-auto bg-surface rounded-[1rem] py-20 px-12 md:px-16 text-center relative overflow-hidden reveal">
+      <div className="max-w-[960px] mx-auto bg-surface rounded-[1rem] py-20 px-12 md:px-16 text-center relative overflow-hidden">
         {/* Decorative glow */}
         <div className="absolute -top-[60px] -right-[60px] w-[260px] h-[260px] bg-secondary/[0.07] rounded-full blur-[60px] pointer-events-none" />
 
