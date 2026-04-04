@@ -17,7 +17,7 @@ const miniCards = [
   {
     title: "Autoridad temática",
     description:
-      "Construimos contenido original con datos propios y expertise verificable — lo que los LLMs necesitan para citarte.",
+      "Desarrollamos contenido original con datos propios y expertise demostrable: el tipo de fuentes que los motores de IA prefieren citar.",
   },
 ];
 
@@ -60,23 +60,23 @@ export function GeoSection() {
 
             <p className="text-primary-fixed-dim/80 text-[1.05rem] leading-[1.75] mb-5">
               GEO es la práctica de estructurar y optimizar tu contenido digital
-              para que sea seleccionado, citado y recomendado por motores de
-              búsqueda basados en inteligencia artificial — ChatGPT, Perplexity,
-              Google AI Overviews, Claude y Copilot.
+              para que los principales motores de IA te seleccionen y citen
+              como fuente: ChatGPT, Perplexity, Google AI Overviews, Claude y
+              Copilot.
             </p>
             <p className="text-primary-fixed-dim/80 text-[1.05rem] leading-[1.75] mb-5">
               Cuando alguien pregunta a una IA sobre tu sector, esa IA sintetiza
-              información de múltiples fuentes web y cita las más relevantes y
-              autoritativas. GEO se asegura de que tu empresa sea una de esas
-              fuentes — no una más en la lista, sino la que el modelo recomienda.
+              información de varias fuentes y cita las más relevantes. Con GEO,
+              tu empresa deja de ser un resultado más y pasa a ser la fuente que
+              el modelo recomienda.
             </p>
             <p className="text-primary-fixed-dim/80 text-[1.05rem] leading-[1.75] mb-10">
-              GEO no sustituye al SEO — lo complementa. Los motores de IA
-              utilizan señales SEO (autoridad de dominio, backlinks, velocidad)
-              como indicadores de confianza. Pero para ser citado necesitas además
+              GEO no sustituye al SEO, lo complementa. Los motores de IA
+              usan señales SEO (autoridad de dominio, backlinks, velocidad) como
+              indicadores de confianza. Pero para ser citado necesitas también
               contenido con estructura extractable, datos verificables, schema
-              markup enriquecido y actualización frecuente. La estrategia óptima
-              en 2026 combina ambas capas.
+              markup enriquecido y actualizaciones frecuentes. En 2026, lo que
+              funciona es trabajar las dos capas.
             </p>
 
             {/* Mini Cards Grid */}

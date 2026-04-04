@@ -24,8 +24,8 @@ export function Hero() {
       {/* Subtitle */}
       <p className="text-[clamp(0.95rem,1.8vw,1.15rem)] leading-[1.75] text-on-surface-variant max-w-[680px] mb-10 animate-fade-in-up animate-delay-300">
         Diseño web de alto rendimiento, posicionamiento SEO y optimización para
-        motores de IA (GEO). Tu marca, visible donde tus clientes buscan — tanto
-        en Google como en ChatGPT, Perplexity y Google AI Overviews.
+        motores de IA (GEO). Tu marca visible donde tus clientes buscan: en
+        Google, en ChatGPT, en Perplexity y en Google AI Overviews.
       </p>
 
       {/* CTA */}

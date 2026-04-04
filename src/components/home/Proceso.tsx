@@ -9,7 +9,7 @@ const steps = [
     num: "2",
     title: "Estrategia",
     description:
-      "Definimos la hoja de ruta con acciones priorizadas, plazos realistas, responsables y métricas de éxito claras. Sin ambigüedad — sabes exactamente qué se va a hacer y por qué.",
+      "Definimos la hoja de ruta con acciones priorizadas, plazos realistas y métricas de éxito claras. Sin ambigüedad: sabes exactamente qué se va a hacer y por qué.",
   },
   {
     num: "3",

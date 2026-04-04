@@ -51,9 +51,9 @@ export function Servicios() {
             Capacidades Digitales
           </h2>
           <p className="mt-4 max-w-[560px] text-[1.05rem] leading-[1.75] text-on-surface-variant">
-            Cada servicio funciona de forma autónoma o como parte de una
-            estrategia integral. Sin paquetes inflados — solo lo que tu empresa
-            necesita para competir.
+            Cada servicio funciona solo o como parte de una estrategia
+            integral. Sin paquetes inflados. Solo lo que tu empresa necesita
+            para competir.
           </p>
         </div>
 

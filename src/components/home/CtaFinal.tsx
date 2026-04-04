@@ -11,8 +11,7 @@ export function CtaFinal() {
 
         <p className="text-[1.05rem] leading-[1.75] text-on-surface-variant max-w-[600px] mx-auto mb-10 relative">
           Solicita un diagnóstico gratuito. Analizamos tu web, tu SEO y tu
-          visibilidad en motores de IA — y te decimos exactamente qué mejorar y
-          en qué orden.
+          visibilidad en motores de IA. Te decimos qué mejorar y en qué orden.
         </p>
 
         <a
