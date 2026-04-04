@@ -34,7 +34,7 @@ export const professionalServiceSchema = {
     "Posicionamiento en ChatGPT",
     "Google AI Overviews",
   ],
-  email: "hola@competedigital.es",
+  email: "hola@compitedigital.com",
 };
 
 export const websiteSchema = {

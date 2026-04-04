@@ -38,7 +38,7 @@ export default function Privacidad() {
         <p>
           Puedes ejercer tus derechos de acceso, rectificación, supresión,
           oposición, limitación del tratamiento y portabilidad dirigiéndote a
-          hola@competedigital.es.
+          hola@compitedigital.com.
         </p>
       </div>
     </article>

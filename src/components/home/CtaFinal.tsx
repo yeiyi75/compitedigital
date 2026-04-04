@@ -1,29 +1,52 @@
+import { ContactForm } from "./ContactForm";
+
 export function CtaFinal() {
   return (
     <section className="py-32 px-6 bg-surface-low" id="contacto">
-      <div className="max-w-[960px] mx-auto bg-surface rounded-[1rem] py-20 px-12 md:px-16 text-center relative overflow-hidden">
-        {/* Decorative glow */}
-        <div className="absolute -top-[60px] -right-[60px] w-[260px] h-[260px] bg-secondary/[0.07] rounded-full blur-[60px] pointer-events-none" />
+      <div className="max-w-[1280px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-[1.25rem] overflow-hidden border border-outline-variant/15 shadow-[0_30px_60px_rgba(0,0,0,0.06)]">
 
-        <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-light text-primary tracking-[-0.02em] mb-6 relative">
-          ¿Sabes cómo ven a tu empresa los algoritmos de IA?
-        </h2>
+          {/* ── Left: Copy panel ── */}
+          <div className="bg-primary-container px-12 py-16 md:px-16 flex flex-col justify-between relative overflow-hidden">
+            {/* Decorative glow */}
+            <div className="absolute -bottom-[80px] -left-[80px] w-[320px] h-[320px] bg-secondary/[0.06] rounded-full blur-[80px] pointer-events-none" />
 
-        <p className="text-[1.05rem] leading-[1.75] text-on-surface-variant max-w-[600px] mx-auto mb-10 relative">
-          Solicita un diagnóstico gratuito. Analizamos tu web, tu SEO y tu
-          visibilidad en motores de IA. Te decimos qué mejorar y en qué orden.
-        </p>
+            <div className="relative">
+              <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary block mb-6">
+                Diagnóstico gratuito
+              </span>
+              <h2 className="font-display text-[clamp(2rem,3.5vw,3rem)] font-light text-on-primary tracking-[-0.03em] leading-[1.1] mb-8">
+                ¿Sabes cómo ven a tu empresa los algoritmos de IA?
+              </h2>
+              <p className="text-[1rem] leading-[1.8] text-primary-fixed-dim/70 max-w-[400px]">
+                Analizamos tu web, tu posicionamiento SEO y tu visibilidad en
+                motores de IA. Te decimos qué mejorar y en qué orden.
+              </p>
+            </div>
 
-        <a
-          href="mailto:hola@competedigital.es"
-          className="inline-block bg-primary text-on-primary px-10 py-4 rounded-[0.5rem] text-[0.82rem] font-bold uppercase tracking-[0.14em] no-underline shadow-[0_12px_24px_rgba(0,25,11,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,25,11,0.18)] relative"
-        >
-          Solicitar diagnóstico gratuito
-        </a>
+            {/* Bottom detail */}
+            <div className="relative mt-14 flex flex-col gap-3">
+              {[
+                "Análisis SEO técnico",
+                "Visibilidad en ChatGPT y Perplexity",
+                "Hoja de ruta priorizada",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary/60 flex-shrink-0" />
+                  <span className="text-[0.84rem] text-primary-fixed-dim/60">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        <p className="mt-6 text-[0.82rem] text-on-surface-variant/60 relative">
-          Sin compromiso · Respuesta en 24h · hola@competedigital.es
-        </p>
+          {/* ── Right: Form panel ── */}
+          <div className="bg-surface px-10 py-14 md:px-14">
+            <ContactForm />
+          </div>
+
+        </div>
       </div>
     </section>
   );

@@ -20,7 +20,7 @@ export default function AvisoLegal() {
         </p>
         <ul>
           <li><strong>Titular:</strong> Compite Digital</li>
-          <li><strong>Correo electrónico:</strong> hola@competedigital.es</li>
+          <li><strong>Correo electrónico:</strong> hola@compitedigital.com</li>
           <li><strong>Sitio web:</strong> compitedigital.com</li>
         </ul>
 
