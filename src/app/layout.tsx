@@ -25,11 +25,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://compitedigital.com
 
 export const metadata: Metadata = {
   title: {
-    default: "Compite Digital — Diseño Web, SEO y GEO: Estrategia de Presencia Digital para Empresas",
+    default: "Diseño Web, SEO y GEO para Pymes | Compite Digital",
     template: "%s | Compite Digital",
   },
   description:
-    "Compite Digital diseña webs de alto rendimiento y optimiza tu presencia en buscadores (SEO) y en motores de IA como ChatGPT y Perplexity (GEO). Diagnóstico digital gratuito.",
+    "Diseño web, SEO y GEO para pymes españolas. Optimizamos tu presencia en Google, ChatGPT y Perplexity. Diagnóstico gratuito sin compromiso.",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",

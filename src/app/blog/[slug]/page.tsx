@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { JsonLd, blogPostingSchema } from "@/components/JsonLd";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://compitedigital.com";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -22,11 +25,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `${SITE_URL}/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
       publishedTime: post.date,
+      url: `${SITE_URL}/blog/${slug}`,
+      images: [
+        {
+          url: `${SITE_URL}/images/compiteHero.png`,
+          width: 1400,
+          height: 700,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [`${SITE_URL}/images/compiteHero.png`],
     },
   };
 }
@@ -39,6 +60,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <article className="max-w-[800px] mx-auto pt-40 px-6 pb-20">
+      <JsonLd data={blogPostingSchema({ title: post.title, excerpt: post.excerpt ?? "", slug, date: post.date })} />
       {/* Post Header */}
       <header className="mb-12">
         <time className="text-[0.72rem] uppercase font-bold tracking-[0.12em] text-on-surface-variant/50 block mb-4">

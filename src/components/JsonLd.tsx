@@ -88,6 +88,54 @@ export const faqPageSchema = {
   ],
 };
 
+export function blogPostingSchema({
+  title,
+  excerpt,
+  slug,
+  date,
+}: {
+  title: string;
+  excerpt: string;
+  slug: string;
+  date: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${SITE_URL}/blog/${slug}`,
+    headline: title,
+    description: excerpt,
+    url: `${SITE_URL}/blog/${slug}`,
+    datePublished: date,
+    dateModified: date,
+    inLanguage: "es",
+    image: `${SITE_URL}/images/compiteHero.png`,
+    author: {
+      "@type": "Organization",
+      name: "Compite Digital",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Compite Digital",
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/images/compiteHero.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/blog/${slug}`,
+    },
+    isPartOf: {
+      "@type": "Blog",
+      "@id": `${SITE_URL}/blog`,
+      name: "Blog de Compite Digital",
+    },
+  };
+}
+
 export const serviceCatalogSchema = {
   "@context": "https://schema.org",
   "@type": "Service",

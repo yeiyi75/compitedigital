@@ -17,8 +17,8 @@ export function Hero() {
 
       {/* H1 */}
       <h1 className="font-display text-[clamp(2.6rem,6.5vw,5.8rem)] font-light leading-[1.06] tracking-[-0.03em] max-w-[900px] mb-7 text-on-surface animate-fade-in-up animate-delay-200">
-        Diseñamos la estrategia que hace que tu empresa{" "}
-        <em className="italic font-normal">compita</em> en la era de la IA
+        Diseño web, SEO y GEO para pymes que quieren{" "}
+        <em className="italic font-normal">competir</em> en Google y en la IA
       </h1>
 
       {/* Subtitle */}
