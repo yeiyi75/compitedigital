@@ -73,7 +73,7 @@ export function Navbar() {
         {/* Mobile Hamburger */}
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="lg:hidden relative z-[101] flex flex-col items-center justify-center gap-[5px] bg-transparent border-none cursor-pointer p-1"
+          className={`lg:hidden relative z-[101] flex flex-col items-center justify-center gap-[5px] bg-transparent border-none cursor-pointer p-1 transition-opacity duration-200 ${isMobileOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
           aria-label={isMobileOpen ? "Cerrar menú" : "Abrir menú de navegación"}
           aria-expanded={isMobileOpen}
           aria-controls="mobile-menu"
@@ -103,25 +103,50 @@ export function Navbar() {
           role="dialog"
           aria-modal="true"
           aria-label="Menú de navegación"
-          className="lg:hidden fixed inset-0 bg-surface/95 backdrop-blur-xl z-[99] flex flex-col items-center justify-center gap-8"
+          className="lg:hidden fixed inset-0 bg-surface/97 backdrop-blur-xl z-[102] flex flex-col"
         >
-          {navLinks.map((link) => (
+          {/* Top bar with close button */}
+          <div className="flex items-center justify-between px-8 py-6">
             <Link
-              key={link.href}
-              href={link.href}
+              href="/"
               onClick={handleLinkClick}
-              className="text-[1.1rem] uppercase font-medium text-on-surface tracking-[0.12em] no-underline"
+              className="font-display italic text-[1.4rem] tracking-[-0.03em] text-primary no-underline"
             >
-              {link.label}
+              compite digital
             </Link>
-          ))}
-          <Link
-            href="/#contacto"
-            onClick={handleLinkClick}
-            className="bg-primary text-on-primary px-8 py-3 rounded-[0.5rem] text-[0.82rem] font-bold tracking-[0.14em] uppercase no-underline"
-          >
-            Diagnóstico Gratuito
-          </Link>
+            <button
+              onClick={() => setIsMobileOpen(false)}
+              className="flex items-center justify-center w-10 h-10 bg-transparent border-none cursor-pointer text-on-surface"
+              aria-label="Cerrar menú"
+            >
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+            </button>
+          </div>
+
+          {/* Nav items — centered in remaining space */}
+          <div className="flex-1 flex flex-col items-center justify-center gap-7 pb-12">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={handleLinkClick}
+                className="text-[1.15rem] uppercase font-medium text-on-surface tracking-[0.12em] no-underline hover:text-primary transition-colors duration-200"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <div className="mt-4">
+              <Link
+                href="/#contacto"
+                onClick={handleLinkClick}
+                className="inline-block bg-primary text-on-primary px-10 py-3.5 rounded-[0.5rem] text-[0.82rem] font-bold tracking-[0.14em] uppercase no-underline"
+              >
+                Diagnóstico Gratuito
+              </Link>
+            </div>
+          </div>
         </div>
       )}
     </header>
