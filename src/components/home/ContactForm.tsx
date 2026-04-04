@@ -136,8 +136,9 @@ export function ContactForm() {
               {WEB_OPTIONS.map((opt) => (
                 <button
                   key={opt.id}
+                  type="button"
                   onClick={() => selectWeb(opt.id)}
-                  className="group relative text-left px-7 py-6 rounded-[0.75rem] border border-outline-variant/20 hover:border-primary/25 bg-surface-low/40 hover:bg-surface-low transition-all duration-200 overflow-hidden cursor-pointer"
+                  className="group relative text-left px-7 py-6 rounded-[0.75rem] border border-outline-variant/20 hover:border-primary/25 bg-surface-low/40 hover:bg-surface-low transition-all duration-200 overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
                 >
                   {/* Number watermark */}
                   <span className="absolute top-3 right-5 font-display italic text-[2rem] text-outline-variant/10 group-hover:text-secondary/12 transition-colors duration-300 leading-none select-none pointer-events-none">
@@ -178,7 +179,8 @@ export function ContactForm() {
                 <button
                   key={opt.id}
                   onClick={() => selectReto(opt.id)}
-                  className="px-5 py-3 rounded-full border border-outline-variant/20 text-[0.88rem] font-medium text-on-surface-variant hover:border-primary/35 hover:text-primary hover:bg-surface-low transition-all duration-180 cursor-pointer"
+                  type="button"
+                  className="px-5 py-3 rounded-full border border-outline-variant/20 text-[0.88rem] font-medium text-on-surface-variant hover:border-primary/35 hover:text-primary hover:bg-surface-low transition-all duration-180 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
                 >
                   {opt.label}
                 </button>
@@ -245,15 +247,21 @@ export function ContactForm() {
                 />
               </div>
 
-              {error && (
-                <p className="text-[0.84rem] text-red-500/75">{error}</p>
-              )}
+              <p
+                id="form-error"
+                role="alert"
+                aria-live="polite"
+                className={`text-[0.84rem] text-red-600 transition-opacity duration-200 ${error ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+              >
+                {error || "\u00A0"}
+              </p>
 
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-1">
                 <button
                   type="submit"
                   disabled={isPending}
-                  className="inline-block bg-primary text-on-primary px-10 py-4 rounded-[0.5rem] text-[0.8rem] font-bold uppercase tracking-[0.14em] shadow-[0_12px_24px_rgba(0,25,11,0.1)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,25,11,0.16)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                  aria-describedby={error ? "form-error" : undefined}
+                  className="inline-block bg-primary text-on-primary px-10 py-4 rounded-[0.5rem] text-[0.8rem] font-bold uppercase tracking-[0.14em] shadow-[0_12px_24px_rgba(0,25,11,0.1)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(0,25,11,0.16)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2"
                 >
                   {isPending ? "Enviando…" : "Solicitar diagnóstico →"}
                 </button>
@@ -268,11 +276,12 @@ export function ContactForm() {
         {/* ── STEP 4: Confirmación ── */}
         {step === 4 && (
           <div className="text-center py-6">
-            <div className="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-8">
+            <div className="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-8" aria-hidden="true">
               <svg
                 className="w-7 h-7 text-secondary"
                 viewBox="0 0 24 24"
                 fill="currentColor"
+                aria-hidden="true"
               >
                 <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
               </svg>

@@ -90,7 +90,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col bg-surface text-on-surface antialiased">
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1" id="main-content">{children}</main>
         <Footer />
         <RevealObserver />
       </body>
