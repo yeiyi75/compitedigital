@@ -28,6 +28,21 @@ export async function sendDiagnostico(data: {
     nada: "No sabe por dónde empezar",
   };
 
+  const escapeHtml = (value: string) =>
+    value
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+
+  const nombre = escapeHtml(data.nombre.trim());
+  const empresa = escapeHtml(data.empresa.trim());
+  const email = escapeHtml(data.email.trim());
+  const web = escapeHtml(webLabel[data.web] ?? data.web);
+  const reto = escapeHtml(retoLabel[data.reto] ?? data.reto);
+  const subject = `Diagnóstico: ${data.empresa.trim() || data.nombre.trim()}`;
+
   const html = `
     <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 24px; background: #fff;">
       <div style="margin-bottom: 32px;">
@@ -39,31 +54,31 @@ export async function sendDiagnostico(data: {
         <tr>
           <td style="padding: 18px 20px; background: #f5f8f6; border-bottom: 1px solid #dde8e1;">
             <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #8aaa96; margin-bottom: 5px;">Situación web</div>
-            <div style="font-size: 15px; color: #0d1f13;">${webLabel[data.web] ?? data.web}</div>
+            <div style="font-size: 15px; color: #0d1f13;">${web}</div>
           </td>
         </tr>
         <tr>
           <td style="padding: 18px 20px; background: #f5f8f6; border-bottom: 1px solid #dde8e1;">
             <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #8aaa96; margin-bottom: 5px;">Mayor reto</div>
-            <div style="font-size: 15px; color: #0d1f13;">${retoLabel[data.reto] ?? data.reto}</div>
+            <div style="font-size: 15px; color: #0d1f13;">${reto}</div>
           </td>
         </tr>
         <tr>
           <td style="padding: 18px 20px; background: #f5f8f6; border-bottom: 1px solid #dde8e1;">
             <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #8aaa96; margin-bottom: 5px;">Contacto</div>
-            <div style="font-size: 15px; color: #0d1f13;">${data.nombre}${data.empresa ? ` · ${data.empresa}` : ""}</div>
+            <div style="font-size: 15px; color: #0d1f13;">${nombre}${empresa ? ` · ${empresa}` : ""}</div>
           </td>
         </tr>
         <tr>
           <td style="padding: 18px 20px; background: #f5f8f6;">
             <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #8aaa96; margin-bottom: 5px;">Email</div>
-            <a href="mailto:${data.email}" style="font-size: 15px; color: #2e7d4f; text-decoration: none;">${data.email}</a>
+            <a href="mailto:${email}" style="font-size: 15px; color: #2e7d4f; text-decoration: none;">${email}</a>
           </td>
         </tr>
       </table>
 
       <p style="margin-top: 28px; font-size: 12px; color: #aaa; text-align: center;">
-        Responde a este email para contactar con ${data.nombre} directamente.
+        Responde a este email para contactar con ${nombre} directamente.
       </p>
     </div>
   `;
@@ -78,8 +93,8 @@ export async function sendDiagnostico(data: {
       body: JSON.stringify({
         from: "Compite Digital <noreply@compitedigital.com>",
         to: ["hola@compitedigital.com"],
-        reply_to: data.email,
-        subject: `Diagnóstico: ${data.empresa || data.nombre}`,
+        reply_to: data.email.trim(),
+        subject,
         html,
       }),
     });

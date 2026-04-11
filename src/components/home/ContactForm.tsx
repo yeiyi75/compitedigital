@@ -208,6 +208,7 @@ export function ContactForm() {
                     type="text"
                     required
                     autoFocus
+                    autoComplete="name"
                     value={data.nombre}
                     onChange={(e) =>
                       setData((d) => ({ ...d, nombre: e.target.value }))
@@ -222,6 +223,7 @@ export function ContactForm() {
                   </label>
                   <input
                     type="text"
+                    autoComplete="organization"
                     value={data.empresa}
                     onChange={(e) =>
                       setData((d) => ({ ...d, empresa: e.target.value }))
@@ -238,6 +240,7 @@ export function ContactForm() {
                 <input
                   type="email"
                   required
+                  autoComplete="email"
                   value={data.email}
                   onChange={(e) =>
                     setData((d) => ({ ...d, email: e.target.value }))
@@ -269,6 +272,10 @@ export function ContactForm() {
                   Sin compromiso · Respuesta en 24h
                 </span>
               </div>
+              <p className="text-[0.72rem] leading-[1.6] text-on-surface-variant/45">
+                Usaremos estos datos solo para responder a tu solicitud de
+                diagnóstico. No pedimos contraseñas ni datos de acceso.
+              </p>
             </form>
           </div>
         )}
